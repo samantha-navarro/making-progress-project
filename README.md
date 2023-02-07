@@ -1,2 +1,2 @@
 # making-progress-project
-progress-steps
+progress-steps using HTML, CSS, and JavaScript
