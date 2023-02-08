@@ -15,3 +15,25 @@ body {
     background-color: #f6f7fb;
 }
 
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30%;
+    font-size: 25px;
+
+}
+
+.progress-container {
+   display: flex;
+   /* default flex display is row */
+   justify-content: space-between;
+   /* lets numbers be apart from one another */
+   margin-bottom: 30px;
+   /* away from the buttons */
+   position: relative;
+   max-width: 100%;
+   width: 350px;
+   /* the size of the container */
+}
