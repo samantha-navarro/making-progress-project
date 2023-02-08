@@ -51,6 +51,7 @@ h1 {
   left: 0;
   height: 4px;
   width: 100%;
+  /* this is 100% while the .progress is 0% */
   transform: translateY(-50%);
   /* to make the Y axis be in the middle of the numbers */
   z-index: -1;
@@ -65,7 +66,8 @@ h1 {
   top: 50%;
   left: 0;
   height: 4px;
-  width: 100%;
+  width: 0%;
+  /* 0% because the green line starts at 1. If we change the width to check we can see where the green line will appear */
   transform: translateY(-50%);
   z-index: -1;
   transition: 0.4s ease;
@@ -88,4 +90,29 @@ h1 {
 
 .circle.active {
   border-color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
 }
