@@ -93,7 +93,9 @@ h1 {
 }
 
 .btn {
-    background-color: var(--line-border-fill);
+    /* background-color: var(--line-border-fill); */
+    /* background-color: #b2d3c2; */
+    background-image: linear-gradient(to right top, #b2d3c2, #a8eb12, #b2d3c2, #008793, #00bf72, #b2d3c2);
     color: white;
     border: 0;
     border-radius: 6px;
