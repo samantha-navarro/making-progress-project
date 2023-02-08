@@ -27,6 +27,7 @@ body {
 h1 {
   margin-bottom: 30%;
   font-size: 25px;
+  color: gray;
 }
 
 .progress-container {
