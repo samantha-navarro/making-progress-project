@@ -1,39 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Tiro+Gurmukhi:ital@0;1&display=swap');
 
+:root {
+  --line-border-fill: #3a5311;
+  --line-border-empty: lightgray;
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Tiro Gurmukhi', serif;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #f6f7fb;
+  font-family: 'Tiro Gurmukhi', serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f6f7fb;
 }
 
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 h1 {
-    margin-bottom: 30%;
-    font-size: 25px;
-
+  margin-bottom: 30%;
+  font-size: 25px;
 }
 
 .progress-container {
-   display: flex;
-   /* default flex display is row */
-   justify-content: space-between;
-   /* lets numbers be apart from one another */
-   margin-bottom: 30px;
-   /* away from the buttons */
-   position: relative;
-   max-width: 100%;
-   width: 350px;
-   /* the size of the container */
+  display: flex;
+  /* default flex display is row */
+  justify-content: space-between;
+  /* lets numbers be apart from one another */
+  margin-bottom: 30px;
+  /* away from the buttons */
+  position: relative;
+  max-width: 100%;
+  width: 350px;
+  /* the size of the container */
+}
+
+.progress-container::before {
+  content: '';
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  transform: translateY(-50%);
+  /* to make the Y axis be in the middle of the numbers */
+  z-index: -1;
+  /* to let the number be before the line */
+}
+
+/* .progress moving from one line to the next */
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  /* this makes the numbers appear evenly with line */
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #b2d3c2;
+  color: white;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+
+  /* center the circles to fit inside */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid lightgray;
+  transform: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
 }
